@@ -3,11 +3,11 @@ package listaexercicio.carro;
 import java.util.Scanner;
 
 public class Carro {
-    String modelo;
-    float velocidade;
-    float aceleracao;
-    int marcha;
-    boolean ligado;
+    private String modelo;
+    private float velocidade;
+    private float aceleracao;
+    private int marcha;
+    private boolean ligado;
     
     public Carro(){
         this.modelo = "R8 Coupé plus";
@@ -73,7 +73,7 @@ public class Carro {
         scanner.close();
     }
     
-    void ligar(){
+    public void ligar(){
         if(!ligado){
             ligado = true;
             System.out.println("O carro está ligado.");
@@ -82,7 +82,7 @@ public class Carro {
         }
     }
     
-    void desligar(){
+    public void desligar(){
         if(ligado){
             ligado = false;
             System.out.println("O carro está desligado.");
@@ -91,7 +91,7 @@ public class Carro {
         }
     }
     
-    void acelerar(float aceleracao){
+    public void acelerar(float aceleracao){
         if (ligado){
             velocidade += aceleracao;
             System.out.println("Velocidade atual(após acelerar): " + velocidade + "Km/h.");
@@ -100,7 +100,7 @@ public class Carro {
         }
     }
     
-    void desacelerar(float desaceleracao){
+    public void desacelerar(float desaceleracao){
         if (ligado){
             velocidade -= desaceleracao;
             System.out.println("Velocidade atual(após desacelerar): " + velocidade + "Km/h.");
@@ -109,7 +109,7 @@ public class Carro {
         }
     }
     
-    void virarDireita(){
+    public void virarDireita(){
         if(ligado){
             System.out.println("O carro está virando à direita.");
         } else {
@@ -117,7 +117,7 @@ public class Carro {
         }
     }
     
-    void virarEsquerda(){
+    public void virarEsquerda(){
         if(ligado){
             System.out.println("O carro está virando à esquerda.");
         } else {
@@ -125,7 +125,7 @@ public class Carro {
         }
     }
     
-    void subirMarcha(){
+    public void subirMarcha(){
         if(ligado && marcha < 5){
             marcha++;
             System.out.println("Marcha: " + marcha);
@@ -136,7 +136,7 @@ public class Carro {
         }
     }
     
-    void descerMarcha(){
+    public void descerMarcha(){
         if(ligado && marcha > 1){
             marcha--;
             System.out.println("Marcha: " + marcha);
