@@ -3,13 +3,13 @@ package estudocaso.televisao;
 import java.util.Scanner;
 
 public class Televisao {
-    String marca;
-    int tamanhoTela;
-    int volume;
-    int voltagem;
-    int canal;
-    boolean ligado;
-    int consumo;
+    private String marca;
+    private int tamanhoTela;
+    private int volume;
+    private int voltagem;
+    private int canal;
+    private boolean ligado;
+    private int consumo;
     
     public Televisao(String marca, int tamanhoTela, int voltagem){
         this.marca = marca;
@@ -66,7 +66,7 @@ public class Televisao {
         scanner.close();
     }
     
-    void ligar(){
+    public void ligar(){
         if (!this.ligado){
             this.ligado = true;
             consumo = this.tamanhoTela * this.voltagem;
@@ -76,7 +76,7 @@ public class Televisao {
         }
     }
     
-    void desligar(){
+    public void desligar(){
         if (ligado){
             ligado = false;
             System.out.println("A TV está desligada.");
@@ -85,7 +85,7 @@ public class Televisao {
         }
     }
     
-    void aumentarVolume(){
+    public void aumentarVolume(){
         if (ligado && volume < 10){
             volume ++;
             System.out.println("Volume atual(após aumentar): " + volume);
@@ -97,7 +97,7 @@ public class Televisao {
         
     }
     
-    void diminuirVolume(){
+    public void diminuirVolume(){
         if (ligado && volume > 1){
             volume--;
             System.out.println("Volue atual(após diminuir): " + volume);
@@ -108,7 +108,7 @@ public class Televisao {
         }
     }
     
-    void subirCanal(){
+    public void subirCanal(){
         if(ligado){
             canal++;
             System.out.println("Mudou para o canal " + canal);
@@ -117,7 +117,7 @@ public class Televisao {
         }
     }
     
-    void descerCanal(){
+    public void descerCanal(){
         if (ligado && canal > 1){
             canal--;
             System.out.println("Mudou para o canal " + canal);
